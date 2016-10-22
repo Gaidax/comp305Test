@@ -63,6 +63,7 @@ public class EnemyController : MonoBehaviour {
         {
             gameController.ScoreValue += 100;
             Instantiate(explosionParticle, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(other.gameObject);
             _Reset();
         }
     }

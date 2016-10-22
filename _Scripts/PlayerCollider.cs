@@ -9,9 +9,10 @@ public class PlayerCollider : MonoBehaviour {
 
     public GameController gameController;
     public EnemyController enemy;
+    public GameObject explosionParticle;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -27,6 +28,8 @@ public class PlayerCollider : MonoBehaviour {
         if (other.gameObject.CompareTag("TIE Fighter"))
         {
             gameController.HullPoints -= 1;
+            explosionParticle.layer = 2;
+            Instantiate(explosionParticle, gameObject.transform.position, gameObject.transform.rotation);
             other.GetComponent<Transform>().position = enemy.getResetPos();
         }
 

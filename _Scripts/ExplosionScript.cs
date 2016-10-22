@@ -16,7 +16,7 @@ public class ExplosionScript : MonoBehaviour {
     {
         Vector2 newPos = _transform.position;
 
-        newPos.x -= 0.15f;
+        newPos.y -= 0.15f;
 
         _transform.position = newPos;
     }
