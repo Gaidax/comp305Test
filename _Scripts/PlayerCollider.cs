@@ -8,6 +8,7 @@ using System.Collections;
 public class PlayerCollider : MonoBehaviour {
 
     public GameController gameController;
+    public EnemyController enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -25,9 +26,8 @@ public class PlayerCollider : MonoBehaviour {
 
         if (other.gameObject.CompareTag("TIE Fighter"))
         {
-            print("HIT");
             gameController.HullPoints -= 1;
-
+            other.GetComponent<Transform>().position = enemy.getResetPos();
         }
 
     }

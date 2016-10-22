@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
 	public Boundary boundary;
 
 	public Camera camera;
+
+    public GameObject Laser;
+    public GameObject FirePoint;
 	
 	// PRIVATE INSTANCE VARIABLES
 	private Vector2 _newPosition = new Vector2(0.0f, 0.0f);
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this._CheckInput ();
+        shoot();
 	}
 
 	private void _CheckInput() {
@@ -42,8 +46,6 @@ public class PlayerController : MonoBehaviour {
 		// movement by mouse
 		Vector2 mousePosition = Input.mousePosition;
 		this._newPosition.x = this.camera.ScreenToWorldPoint (mousePosition).x;
-        //print(Input.mousePosition);
-        print(_newPosition);
 		this._BoundaryCheck ();
 
 		gameObject.GetComponent<Transform>().position = this._newPosition;
@@ -58,4 +60,12 @@ public class PlayerController : MonoBehaviour {
 			this._newPosition.x = this.boundary.xMax;
 		}
 	}
+
+    private void shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(Laser, FirePoint.transform.position, FirePoint.transform.rotation);
+        }
+    }
 }
