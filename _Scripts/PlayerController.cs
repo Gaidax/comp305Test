@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//Vasyl Milchevskyi
+//300839782
+//COMP305
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {

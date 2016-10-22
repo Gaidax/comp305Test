@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//Vasyl Milchevskyi
+//300839782
+//COMP305
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerCollider : MonoBehaviour {
@@ -15,6 +19,7 @@ public class PlayerCollider : MonoBehaviour {
 	
 	}
 
+    //Checks if player hits TIE Fighter tagged object (enemy)
     private void OnTriggerEnter2D(Collider2D other)
     {
 

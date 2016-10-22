@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//Vasyl Milchevskyi
+//300839782
+//COMP305
+
+using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
@@ -28,6 +32,7 @@ public class EnemyController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+    //tie fighter movement
 	void Update () {
 		Vector2 currentPosition = gameObject.GetComponent<Transform> ().position;
 		currentPosition.y -= this._CurrentSpeed;

@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//Vasyl Milchevskyi
+//300839782
+//COMP305
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -20,6 +24,7 @@ public class GameController : MonoBehaviour {
     public GameObject enemy;
     
 
+    //getter and setter for hull points (assignes changes for label as well)
     public int HullPoints
     {
         get
@@ -41,6 +46,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    //getter and setter for Score (for label as well)
     public int ScoreValue
     {
         get
@@ -55,7 +61,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
+    //Initializing the game, hull points, score and all the end game labels disabled
     void Start () {
         HullPoints = 5;
         ScoreValue = 0;
@@ -71,14 +77,16 @@ public class GameController : MonoBehaviour {
 	
 	}
 
-	// generate Clouds
+	// generate Enemies
 	private void _GenerateEnemies() {
+        enemies = new List<GameObject>();
 		for (int count=0; count < this.enemyCount; count++) {
             Instantiate(enemy);
             enemies.Add(enemy);
 		}
 	}
-
+    
+    //End Game after hull points are zero
     private void _endGame()
     {
         GameOverLabel.gameObject.SetActive(true);
@@ -88,7 +96,7 @@ public class GameController : MonoBehaviour {
         ScoreLabel.gameObject.SetActive(false);
         HullPointsLabel.gameObject.SetActive(false);
         falcon.SetActive(false);
-        //setObject(false, enemies);
+        setObject(false, enemies);
 
         //_endGameSound.Play();
     }
@@ -102,6 +110,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    //Loads Main Scene when restart button clicked
     public void RestartButton_Click()
     {
         SceneManager.LoadScene("Main");
