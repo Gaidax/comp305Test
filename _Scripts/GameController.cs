@@ -4,6 +4,8 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 	// PUBLIC INSTANCE VARIABLES
 	public int enemyCount;
+    public int hullPoints;
+    public int score;
 	public GameObject enemy;
 	
 	// Use this for initialization

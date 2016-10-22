@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour {
 		// movement by mouse
 		Vector2 mousePosition = Input.mousePosition;
 		this._newPosition.x = this.camera.ScreenToWorldPoint (mousePosition).x;
-
+        //print(Input.mousePosition);
+        print(_newPosition);
 		this._BoundaryCheck ();
 
 		gameObject.GetComponent<Transform>().position = this._newPosition;
