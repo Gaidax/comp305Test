@@ -57,7 +57,13 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		this._GenerateEnemies ();
+        HullPoints = 5;
+        ScoreValue = 0;
+
+        GameOverLabel.gameObject.SetActive(false);
+        FinalScoreLabel.gameObject.SetActive(false);
+        RestartButton.gameObject.SetActive(false);
+        this._GenerateEnemies ();
 	}
 	
 	// Update is called once per frame
@@ -82,7 +88,7 @@ public class GameController : MonoBehaviour {
         ScoreLabel.gameObject.SetActive(false);
         HullPointsLabel.gameObject.SetActive(false);
         falcon.SetActive(false);
-        setObject(false, enemies);
+        //setObject(false, enemies);
 
         //_endGameSound.Play();
     }

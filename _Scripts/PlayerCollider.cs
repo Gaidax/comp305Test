@@ -20,6 +20,7 @@ public class PlayerCollider : MonoBehaviour {
 
         if (other.gameObject.CompareTag("TIE Fighter"))
         {
+            print("HIT");
             gameController.HullPoints -= 1;
 
         }
